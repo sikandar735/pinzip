@@ -35,7 +35,11 @@
     /* Highlight entire form when any field is focused */
     .search-form:focus-within {
     border-color: #007bdb;
+<<<<<<< HEAD
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+=======
+    box-shadow: 0 0 4px rgba(0, 123, 219, 0.4);
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
     }
 
     .search-form input {
@@ -236,6 +240,7 @@
   position: relative;
 }
 
+<<<<<<< HEAD
 /* NEW RULE: Removes border/shadow from the text inside the "All Departments" button */
 #toggleDepartments span {
     border: none !important;
@@ -253,6 +258,10 @@
     padding: 0.5rem 2rem !important; 
     border-radius: 0.25rem !important; 
 }
+=======
+
+
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
 
 
 /* slider  */ 
@@ -345,7 +354,11 @@
 
     .shop-now {
       font-size: 13px;
+<<<<<<< HEAD
       color: #ffad18;
+=======
+      color: #6c757d;
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1046,10 +1059,17 @@
   z-index: 1;
 }
 .bg-primary {
+<<<<<<< HEAD
     /* Changed to the new color. Replace #5FBD98 with your desired color code. */
     background-color: #5FBD98 !important; 
 }
 
+=======
+  background-color: #016ebe !important;
+}
+
+
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
 @media (max-width: 1440px) {
   body .header-desktop .header-center-wrapper .search-header .block-search .action.search span, body .header-desktop .header-bottom .secondary-megamenu .megamenu-items li.level0 a .cat-name, body .header-desktop .header-bottom .megamenu-vertical .megamenu-title, body .header-desktop .header-bottom .megamenu-vertical .megamenu-items .level0 > a, body .header-desktop .header-bottom .megamenu-vertical .more-items span, body .block-product-home .product-item-name .product-item-link, body ul.services li .main-title {
     font-size: 14px;
@@ -1083,6 +1103,7 @@
 
 .compare-btn {
     color: white; 
+<<<<<<< HEAD
     /* Increased padding for a bigger button size */
     padding: 12px 20px; 
     border-radius: 8px;
@@ -1102,6 +1123,14 @@
     /* Ensuring a clear font size */
     font-size: 16px; 
     font-weight: 600;
+=======
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    margin-top: 13px;
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
 }
 
 /* Hover / active effect */
@@ -1424,7 +1453,11 @@
 }
 
 .header-desktop .header-bottom .megamenu-vertical {
+<<<<<<< HEAD
   background: transparent;   
+=======
+  background: #016ebe;   
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
 }
 
 .carousel-item {
@@ -1449,6 +1482,7 @@ button, a.action.primary, .cart.table-wrapper .actions-toolbar > .action, .actio
 /* the topbar css end */
 
 
+<<<<<<< HEAD
         .block-logos {
             padding: 40px 0;
             background: #fff;
@@ -1489,6 +1523,48 @@ button, a.action.primary, .cart.table-wrapper .actions-toolbar > .action, .actio
         .block-product-home .product-item-name .product-item-link, ul.services li .main-title, .block-tab-home .list-product-tabs .item-tab:hover, .block-tab-home .list-product-tabs .item-tab.active {
             color: #ffad18;
         }
+=======
+  .block-logos {
+      padding: 40px 0;
+      background: #fff;
+  }
+  
+  .manufacture-logos .logo-item {
+      list-style: none;
+      text-align: center;
+      padding: 15px;
+  }
+  
+  .manufacture-logos .logo-item img {
+      max-width: 100%;
+      height: auto;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      filter: grayscale(100%);
+  }
+  
+  .manufacture-logos .logo-item img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+  }
+  
+  /* Custom Owl Navigation */
+  .manufacture-logos .owl-nav {
+      display: none;
+  }
+  
+  .manufacture-logos .owl-dots {
+      display: none;
+  }
+
+  .services li{
+      border: 1px solid #ffad18;
+      border-radius: 25px;
+  }
+  .block-product-home .product-item-name .product-item-link, ul.services li .main-title, .block-tab-home .list-product-tabs .item-tab:hover, .block-tab-home .list-product-tabs .item-tab.active {
+      color: #ffad18;
+  }
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
  .services li {
     margin-right: 15px;   /* horizontal spacing */
 }
@@ -1636,6 +1712,7 @@ button, a.action.primary, .cart.table-wrapper .actions-toolbar > .action, .actio
 
 
 
+<<<<<<< HEAD
 
           /* Force hide ALL old content in nav buttons */
         .owl-nav .owl-prev *:not(i),
@@ -1710,3 +1787,6 @@ button, a.action.primary, .cart.table-wrapper .actions-toolbar > .action, .actio
             padding: 4px !important;
             border-radius: 0.25rem !important;
         }
+=======
+ 
+>>>>>>> 0fcb56c8c463ceb682d28b7099579005d033c8df
