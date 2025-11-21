@@ -103,6 +103,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
+<style> 
+
+  /* Ensure the menu displays for testing */
+  #departmentsMenu { display: block; width: 320px; }
+
+  /* Make each .cat-name take the full clickable area */
+  .megamenu-items .category-item > a.level-top {
+    display: block;
+    text-decoration: none;
+    padding: 6px 10px;
+  }
+  .megamenu-items .category-item > a.level-top .cat-name {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    transition: background-color .18s ease, color .18s ease;
+  }
+
+  /* Default (non-active) styling - ensure it can be overridden */
+  #departmentsMenu .megamenu-items .category-item > a.level-top .cat-name {
+    background: transparent !important;
+    color: inherit !important;
+  }
+
+  /* Active state - high specificity + !important to beat theme */
+  #departmentsMenu .megamenu-items .category-item.active > a.level-top .cat-name {
+    background: orange !important;
+    color: #fff !important;
+    border-radius: 4px;
+    padding: 6px 8px;        /* keep padding consistent */
+    display: inline-block;
+  }
+
+  /* Also highlight nested submenu items the same way */
+  #departmentsMenu .megamenu-content-cate .category-item.active > a .cat-name {
+    background: orange !important;
+    color: #fff !important;
+  }
+
+  /* For debugging: outlines so you can see elements */
+  .category-item { outline: none; }
+  .category-item > a.level-top:hover { outline: 1px dashed rgba(0,0,0,.08); }
+</style>
 
 </head>
 
@@ -277,12 +321,12 @@
 
 
 
-                                <div class="right-content col-lg-3">
+                                <div class="right-content col-lg-4">
                                     <div class="support-contact">
                                         <div data-content-type="html" data-appearance="default" data-element="main"
                                             data-decoded="true">
                                             <div class="header-contact">
-                                                <a href="tel:0123-456-7890">
+                                                <a href="tel:0123-456-7890" style="text-decoration: none;">
                                                     <span class="contact-title">Contact us</span>
                                                     <span class="phone-number">0123456789</span>
                                                 </a>
@@ -373,7 +417,7 @@
 
 
 
-                    <div class="header-bottom bg-primary">
+                    <div class="header-bottom bg-primary" style="background-color: rgb(9, 105, 246) !important;">
                         <div class="container">
                             <div id="menu-desktop" class="header-megamenu" data-element-mobile="menu-mobile">
                                 <div data-mobile-content="content-mobile" class="content-mobile">
@@ -382,7 +426,7 @@
 
                                         <div class="megamenu-vertical position-relative">
                                             <div class="megamenu-title bg-primary text-white p-2 rounded"
-                                                id="toggleDepartments" style="cursor:pointer;">
+                                                id="toggleDepartments" style="cursor:pointer;background-color: rgb(9, 105, 246) !important;">
                                                 <span>All Departments</span>
                                             </div>
 
@@ -540,7 +584,7 @@
                             <div class="bottom-links"> 
 
                                 <div class="item link compare">
-                                    <a class="compare-btn" href="#">
+                                    <a class="compare-btn fs-2" href="#">
                                         Best Sellers
                                     </a>
                                 </div>
@@ -879,7 +923,7 @@
                             <div class="equal-section">
 
                                 <!-- ===== LEFT MAIN PRODUCT ===== -->
-                                <div class="deal-product">
+                                <div class="deal-product" style="border: 1px solid #ff9d00;">
                                     <span class="discount">Save 40%</span>
                                     <img src="https://www.mobileana.com/wp-content/uploads/2025/06/Apple-iPhone-17-Pro-Max-Cosmic-Orange.webp"
                                         alt="iPhone 17 Pro Max">
@@ -9043,14 +9087,6 @@
         });
     </script>
 
-
-
-
-
-
-
-
-
  
 
 
@@ -9062,14 +9098,70 @@
 
 
 
+ <script>
+/*
+ Robust event-delegation that:
+ - finds the closest .category-item even if user clicks inside nested spans
+ - prevents default navigation so the active state remains visible
+ - removes active from others and adds to clicked one
+ - safe to include before or after other handlers
+*/
+(function () {
+  const menu = document.getElementById('departmentsMenu');
+  if (!menu) {
+    console.warn('departmentsMenu not found');
+    return;
+  }
+
+  // Toggle this to true if you WANT links to navigate away (won't persist active state)
+  const allowNavigation = false;
+
+  menu.addEventListener('click', function (event) {
+    // find the closest li.category-item from the actual clicked target
+    const li = event.target.closest('.category-item');
+
+    // if user clicked somewhere else inside menu (not a category), ignore
+    if (!li || !menu.contains(li)) return;
+
+    // if the click was on an anchor and we want to keep active state without navigation:
+    const anchor = li.querySelector('a.level-top') || li.querySelector('a');
+    if (anchor && !allowNavigation) {
+      // only prevent if the click was on the anchor or inside it
+      if (anchor.contains(event.target) || event.target === anchor) {
+        event.preventDefault();
+      }
+    }
+
+    // remove active from other items (scoped to this menu)
+    const active = menu.querySelectorAll('.category-item.active');
+    active.forEach(a => {
+      if (a !== li) a.classList.remove('active');
+    });
+
+    // toggle active on clicked element (use toggle if you want to allow de-select)
+    li.classList.add('active');
+  });
+
+  // For debug: show console message when click registered
+  menu.addEventListener('click', function (e) {
+    // console.log('menu click - target:', e.target, 'closest li:', e.target.closest('.category-item'));
+  });
+})();
 
 
 
 
+document.addEventListener('click', e => {
+    console.log('Clicked element:', e.target);
+    console.log('Is menu covered?', document.elementFromPoint(e.clientX, e.clientY));
+});
+
+</script>
+ 
+ 
 
 
  
-
 
 </body>
 
