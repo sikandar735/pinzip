@@ -105,47 +105,111 @@
     
 <style> 
 
-  /* Ensure the menu displays for testing */
-  #departmentsMenu { display: block; width: 320px; }
+        /* Shop By Categories Header Section */
+        .category-header {
+            margin-bottom: 30px;
+        }
 
-  /* Make each .cat-name take the full clickable area */
-  .megamenu-items .category-item > a.level-top {
-    display: block;
-    text-decoration: none;
-    padding: 6px 10px;
-  }
-  .megamenu-items .category-item > a.level-top .cat-name {
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 6px 8px;
-    transition: background-color .18s ease, color .18s ease;
-  }
+        .category-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: -25px;
+            padding: 39px;
+        }
 
-  /* Default (non-active) styling - ensure it can be overridden */
-  #departmentsMenu .megamenu-items .category-item > a.level-top .cat-name {
-    background: transparent !important;
-    color: inherit !important;
-  }
+        .category-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
 
-  /* Active state - high specificity + !important to beat theme */
-  #departmentsMenu .megamenu-items .category-item.active > a.level-top .cat-name {
-    background: orange !important;
-    color: #fff !important;
-    border-radius: 4px;
-    padding: 6px 8px;        /* keep padding consistent */
-    display: inline-block;
-  }
+        .category-nav-arrows {
+            display: flex;
+            gap: 10px;
+        }
 
-  /* Also highlight nested submenu items the same way */
-  #departmentsMenu .megamenu-content-cate .category-item.active > a .cat-name {
-    background: orange !important;
-    color: #fff !important;
-  }
+        .category-nav-arrows button {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: all 0.3s;
+        }
 
-  /* For debugging: outlines so you can see elements */
-  .category-item { outline: none; }
-  .category-item > a.level-top:hover { outline: 1px dashed rgba(0,0,0,.08); }
+        .category-nav-arrows button:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .category-divider {
+            height: 2px;
+            background: linear-gradient(to right, #e0e0e0 0%, #e0e0e0 100%);
+            margin-bottom: 0;
+            width: 94%;
+            margin: auto;
+        }
+
+                .view-all-btn {
+            padding: 8px 20px;
+            border: 1px solid #999;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #000;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .view-all-btn:hover {
+            background: #f0f0f0;
+            border-color: #666;
+            text-decoration: none;
+        }
+
+
+        /* Default padding for screens below 780px */
+        .mp-grid {
+        padding: 6px !important;
+        }
+
+
+        .products-grid .product-item-actions .actions-primary .tocart, .block-product-home .bzotech-slider-grid.custom-deals .product-item-actions .actions-primary button, .block-tab-home .list-product-tabs .item-tab:first-child, .block-last-news .item-inner .categories:hover, .banners .shopnow:hover {
+        background: #0969F6;
+        }
+
+                .product-1-style .products-grid .product-item-info .product-item-actions .actions-primary .tocart:hover {
+  background-color: #0969F6;
+}
+
+
+        @media (min-width: 1025px) {
+        .block-tab-home .list-product-tabs .item-tab:first-child {
+            background-color: #0969F6 !important;
+            border-radius: 15px 15px 0px 0px;
+            color: #fff !important;
+            margin: 0;
+            padding: 0 10px 0 20px;
+        }
+        }
+
+
+
+        /* For screens 780px and above */
+        @media (min-width: 780px) {
+        .mp-grid {
+            padding: 60px !important;
+        }
+        }
 </style>
 
 </head>
@@ -1449,7 +1513,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -1556,7 +1620,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -1663,7 +1727,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -1770,7 +1834,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -1877,7 +1941,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -1984,7 +2048,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2091,7 +2155,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2198,7 +2262,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2304,7 +2368,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2411,7 +2475,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2504,41 +2568,10 @@
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
+ 
 
 
                         <div
-                            class="block block-product-home product-item-shadow hidden-block-title nav-1 hover-show-nav mb-desktop-100 mb-mobile-30">
-                            <div class="container">
-                                <div class="block-title title-center">
-                                    <strong class="google-element-font">Best Sellers</strong>
-                                </div>
-
-                                <div class="message info empty">
-                                    <div>We can't find products matching the selection.</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-                                                <div
                             class="block block-product-home product-item-shadow hidden-block-title nav-1 hover-show-nav mb-desktop-50 mb-mobile-30">
                             <div class="container">
                                 <div class="block-title title-center">
@@ -2651,7 +2684,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2758,7 +2791,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2865,7 +2898,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -2972,7 +3005,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -3078,7 +3111,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -3185,7 +3218,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -3292,7 +3325,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -3399,7 +3432,7 @@
                                                                                 <input name="form_key" type="hidden"
                                                                                     value="OwEbcLyHMPAEmDoY"> <button
                                                                                     type="submit" title="Add to Cart"
-                                                                                    class="action tocart primary">
+                                                                                    class="action tocart primary bg-primary">
                                                                                     <span>Add to Cart</span>
                                                                                 </button>
                                                                             </form>
@@ -3424,6 +3457,38 @@
                             </div>
                         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- new code start -->
+                             <div class="category-header">
+                                <div class="category-title-row">
+                                    <h2 class="category-title">Deals</h2>
+                                    <div class="category-nav-arrows">
+                                        <button><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                                        <a href="#" class="view-all-btn">View All</a>
+                                    </div>
+                                </div>
+                                <div class="category-divider"></div>
+                            </div>
+
+                        <!-- new code end -->
+
+
+
+
+
+
+ 
 
                         <!-- Deals section start -->
                         <div class="mp-grid">
@@ -3535,6 +3600,19 @@
 
                         </div>
                         <!-- Deals section end  -->
+
+
+
+
+
+
+
+
+
+
+
+
+                        
                         
                         
                         <br><br>
@@ -3807,7 +3885,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4000,7 +4078,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4184,7 +4262,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4369,7 +4447,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4548,7 +4626,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4726,7 +4804,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -4917,7 +4995,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -5092,7 +5170,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -5273,7 +5351,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -5459,7 +5537,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -5642,7 +5720,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -5820,7 +5898,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -6013,7 +6091,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -6210,7 +6288,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -6399,7 +6477,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -6574,7 +6652,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -6748,7 +6826,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             title="Add to Cart"
-                                                                                                            class="action tocart primary">
+                                                                                                            class="action tocart primary bg-primary">
                                                                                                             <span>Add to
                                                                                                                 Cart</span>
                                                                                                         </button>
@@ -9098,65 +9176,7 @@
 
 
 
- <script>
-/*
- Robust event-delegation that:
- - finds the closest .category-item even if user clicks inside nested spans
- - prevents default navigation so the active state remains visible
- - removes active from others and adds to clicked one
- - safe to include before or after other handlers
-*/
-(function () {
-  const menu = document.getElementById('departmentsMenu');
-  if (!menu) {
-    console.warn('departmentsMenu not found');
-    return;
-  }
-
-  // Toggle this to true if you WANT links to navigate away (won't persist active state)
-  const allowNavigation = false;
-
-  menu.addEventListener('click', function (event) {
-    // find the closest li.category-item from the actual clicked target
-    const li = event.target.closest('.category-item');
-
-    // if user clicked somewhere else inside menu (not a category), ignore
-    if (!li || !menu.contains(li)) return;
-
-    // if the click was on an anchor and we want to keep active state without navigation:
-    const anchor = li.querySelector('a.level-top') || li.querySelector('a');
-    if (anchor && !allowNavigation) {
-      // only prevent if the click was on the anchor or inside it
-      if (anchor.contains(event.target) || event.target === anchor) {
-        event.preventDefault();
-      }
-    }
-
-    // remove active from other items (scoped to this menu)
-    const active = menu.querySelectorAll('.category-item.active');
-    active.forEach(a => {
-      if (a !== li) a.classList.remove('active');
-    });
-
-    // toggle active on clicked element (use toggle if you want to allow de-select)
-    li.classList.add('active');
-  });
-
-  // For debug: show console message when click registered
-  menu.addEventListener('click', function (e) {
-    // console.log('menu click - target:', e.target, 'closest li:', e.target.closest('.category-item'));
-  });
-})();
-
-
-
-
-document.addEventListener('click', e => {
-    console.log('Clicked element:', e.target);
-    console.log('Is menu covered?', document.elementFromPoint(e.clientX, e.clientY));
-});
-
-</script>
+ 
  
  
 
